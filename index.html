@@ -4,26 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+HR:wght@100..400&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <title>AI Generator</title>
 </head>
-<header>
+
+<body>
     <div class="container">
+<header>
     <h1>Bible Verse Generator</h1>
     </header>
 
-    <body>
+
+<div class="form-wrapper">
     <form id="bible-verse-form">
-        <input type="text"  placeholder=" Your word for the day" autofocus autocomplete="off" class="instructions" id="user-instructions" required />
-        <input type="submit" name="submit" id="submit" />
+        <input type="text"  placeholder="Enter a book or scripture" autocomplete="off" class="instructions" id="user-instructions" required />
+        <input type="submit" name="submit" id="submit" /> <br/>
+    <small class="hint">ie: Genesis or John 3:16</small>
     </form>
- <div class="verse-container">
-        <p id="verse"></p>
-        </div>
+    </div>
+ <div class="verse hidden" id="verse"></div>
    
-   <footer>Ths project was coded by <a href="https://github.com/Zee363" target="_blank">Zinhle Nhlapo</a> and is <a href="https://github.com/Zee363/AI-Generator" target="_blank">open-sourced</a> on GtHub and is hosted on <a href="https://zinhle-ai-generator.netlify.app/" target="_blank">Netlify.</a></footer>
+   <footer>This project was coded by <a href="https://github.com/Zee363" target="_blank"><strong>Zinhle Nhlapo</strong></a> and is <a href="https://github.com/Zee363/AI-Generator" target="_blank"><strong>open-sourced</strong></a> on GitHub and hosted on <a href="https://zinhle-ai-generator.netlify.app/" target="_blank"><strong>Netlify.</strong></a></footer>
     <script src="/src/index.js"></script>
     </body>
 </div>
