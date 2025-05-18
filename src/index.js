@@ -1,13 +1,29 @@
+function displayVerse(response) {
+new Typewriter('#verse', {
+  strings: response.data.answer,
+  autoStart: true,
+  delay: 5,
+  cursor: ""
+
+});
+}
+
 function generateVerse(event) {
   event.preventDefault();
   console.log("Form submitted");
 
-new Typewriter('#verse', {
-  strings: 'John 3:16 - For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.',
-  autoStart: true,
-  delay: 0.5,
-  cursor: ""
-});
+  let instructionsInput = document.querySelector("#user-instructions");
+  let apiKey = "4b230af38fdc2b34b014a5b47d0e5tob";
+  let context ="You are a bible verse generator. You will generate a verse from the book the user inserts. The user will insert the book name and you will generate a verse from that book. Make sure to usethe user instructions.";
+  let prompt =`User instructions: Give me a  verse from the book the user inserts ${instructionsInput.value} and give the book and verse please. Be as brief as possible. PLease sign SheCodes AI at the end of the verse on a new line in a strong tag and purple in color`;
+  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`
+
+
+  console.log("Generating verse" );
+  console.log(`Prompt: ${prompt}`);
+  console.log(`Context: ${context}`);
+
+axios.get(apiUrl).then(displayVerse);
 };
 
 
